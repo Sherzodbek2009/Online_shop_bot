@@ -1,0 +1,7 @@
+GENDER_TEXT = """
+    "👗 <b>Jinsingizni tanlang:</b>\n\n"
+    "👔 Erkaklar uchun kolleksiya\n"
+    "👠 Ayollar uchun kolleksiya\n"
+    "🧒 Bolalar uchun kiyimlar\n\n"
+    "Tanlang va davom eting 👇"
+    """
