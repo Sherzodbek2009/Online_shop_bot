@@ -6,7 +6,7 @@ def insert_user(fullname,phone,gender,address,chat_id):
         with get_connect() as db:
             with db.cursor() as dbc:
                 
-                dbc.execute("Insert into users(fullname,phone,gender,address,chat_id) =\
+                dbc.execute("Insert into users(fullname,phone,gender,address,chat_id) \
                 values(%s,%s,%s,%s,%s)",(fullname,phone,gender,address,chat_id))
                 
                 db.commit()
