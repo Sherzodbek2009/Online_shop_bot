@@ -7,6 +7,7 @@ from texts import GENDER_TEXT, CATEGORY_TEXT, REGISTERED_START_TEXT, SEASON_TEXT
 
 from buttons import MENU_GENDER_BUTTON, REGISTER_SUCCESS_BUTTONS, CATEGORY_BUTTON, SEASON_BUTTON
 from states import MenuOption
+from database import get_filter_products, get_category_by_name
 
 user_router = Router()
 
@@ -73,3 +74,6 @@ async def send_product_by_filter(call:CallbackQuery,state:FSMContext):
         
         await call.message.edit_reply_markup(reply_markup=None)
         await call.message.answer(text=select_filter(gender,category,season))
+        
+        category_id = get_category_by_name(category)[0]
+        data = get_filter_products(category_id,season,gender)
