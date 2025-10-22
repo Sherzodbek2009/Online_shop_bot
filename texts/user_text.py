@@ -47,3 +47,15 @@ Ajoyib tamlov! 🎉
 Endi siz uchun aynan shu yo'nalishda eng mos kiyimlarni topamiz 👕🩳👜
 
 Iltimos, bir necha soniya keting - tavsiya etilgan mahsulotlar yuklanmoqda 🔎"""
+
+
+def product_text(name,brand,category_name,gender,size,season,price):
+    return f"""
+    <b>{name}</b>\n
+    🏷 Brand: <i>{brand}</i>\n
+    📂 Kategoriya: <i>{category_name}</i>\n
+    🧍 Gender: <i>{gender}</i>\n
+    📏 O'lcham: <i>{size}</i>\n
+    🍂 Fasl: <i>{season}</i>\n
+    💰 Narx: <b>{price}</b> so'm\n
+            """

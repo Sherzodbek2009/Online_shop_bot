@@ -21,17 +21,28 @@ def get_filter_products(category_id,season,gender):
                 dbc.execute("select * from product where category_id = %s and season =%s and gender_type = %s ",(category_id,season,gender))
                 return dbc.fetchall()
     except Exception as err:
-        print(f"Filter Product: {err}")
+        print(f"Filter Category: {err}")
         return None
 
 
-def get_category_by_name(category_name):
+def get_category_by_id(category_id):
     try:
         with get_connect() as db:
             with db.cursor() as dbc:
                 
-                dbc.execute("select * from category where name = %s ",(category_name))
+                dbc.execute("select name from category where id = %s ",(category_id,))
                 return dbc.fetchone()
+    except Exception as err:
+        print(f"Filter Category: {err}")
+        return None
+
+def get_category():
+    try:
+        with get_connect() as db:
+            with db.cursor() as dbc:
+                
+                dbc.execute("select id from category where is_active = true")
+                return dbc.fetchall()
     except Exception as err:
         print(f"Filter Product: {err}")
         return None
